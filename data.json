@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Birthday photography",
+    "imgage": "https://raw.githubusercontent.com/rubelrana123/phographer/main/birthday.jpg",
+    "description": "Birthday photography is a very complex type of shooting, requiring a lot of patience and good communication skills. How to take good birthday photos and what settings to choose? Why should you use a flash? How to edit a birthday party photo? I will share my tips and tricks in this post.Your birthday is a special occasion, and this important enough to book a professional photo session and feel like a star. At Localgrapher, our photographers .",
+    "rating" : "5",
+     "price": "25000"
+
+  },
+  {
+    "title": "Wedding photography",
+    "imgage": "https://raw.githubusercontent.com/rubelrana123/phographer/main/wedding3.jpg",
+    "description": "Wedding photography is a specialty in photography that is primarily focused on the photography of events and activities relating to weddings. It may include other types of portrait photography of the couple before the official wedding day, such as a pre-wedding engagement session..",
+    "rating" : "4.8",
+     "price": "12000"
+
+  },
+  {
+    "title": "Fashion photography",
+    "imgage": "https://raw.githubusercontent.com/rubelrana123/phographer/main/portrait-661997_960_720.jpg",
+    "description": "Fashion photography is a genre of photography which is devoted to displaying clothing and other fashion items. Fashion photography is most often conducted for advertisements or fashion magazines such as Vogue, Vanity Fair, or Elle.",
+    "rating" : "4.6",
+     "price": "15000"
+
+  },
+  {
+    "title": "Travel photography",
+    "imgage": "https://raw.githubusercontent.com/rubelrana123/phographer/main/polynesia-3021072_960_720.jpg",
+    "description": "Travel photography is a form of photography that for example involves photography of landscapes, historical buildings, cultures, and people in a specific place and destination to document a certain place and make others make to wish they were there. With a collection of travel photographs of amazing landscapes, wildlife, breathtaking nature, cultures, and people, you will have the possibility to showcase a place, country, or even the world through photos. Travel Photography goes further than just capturing an awesome image.",
+    "rating" : "4.5",
+     "price": "10000"
+
+  },
+  {
+    "title": "Photo Editing",
+    "imgage": "https://github.com/rubelrana123/phographer/blob/main/manipulation-1006701_960_720.jpg",
+    "description": "Other common skills a great photo editor should have include: Knowledge of photography techniques. Strong knowledge of photo editing software tools. Creativity and artistic mindset. Leadership and motivational skills",
+    "rating" : "4.5",
+     "price": "15000"
+
+  },
+  {
+    "title": "Food PhotoGraphy",
+    "imgage": "https://raw.githubusercontent.com/rubelrana123/phographer/main/meatloaf-3747129_960_720.jpg",
+    "description": "Food photography is a style of still life photography that puts food at the center of the image. The purpose of food photography is generally to make food look as appetizing as possible, and can include subjects that range from elaborate full meals and tasty beverages to simple ingredients and fresh produce.",
+    "rating" : "4.5",
+     "price": "20000"
+
+  }
+]
