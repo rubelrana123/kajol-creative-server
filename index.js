@@ -3,6 +3,7 @@
 
 
 const express = require('express')
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const app = express()
 const cors = require("cors");
 const port = process.env.PORT || 5000;
@@ -16,7 +17,6 @@ app.get('/', (req, res) => {
 
 // monogo setup 
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://kajolcreative:yfv4g92BIVgV8kkr@kajolcreative.iovdjjt.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
  
@@ -28,19 +28,33 @@ async function dbConncet () {
   try {
   const serviceCollection = client.db("kajolCreative").collection("services");
 
-         app.get('/services', async (req, res) => {
+         app.get('/allservices', async (req, res) => {
             const query = {}
             const cursor = serviceCollection.find(query);
-            const services = await cursor.toArray();
-            res.send(services);
+            const result = await cursor.toArray();
+            res.send(result);
+            console.log(result);
              
         });
-        // app.get('/services/:id', async (req, res) => {
-        //   const id = req.params.id;
-        //   const query = {_id : ObjectId(id)};
-        //   const service = await serviceCollection.findOne(query);
-        //   res.send(service);
-        // })
+        app.get("/services", async(req, res) => {
+      const size = parseInt(req.query.size)
+      console.log(size);
+      
+      const query = {};
+       const cursor = serviceCollection.find(query);
+       
+       const service = await cursor.limit(size).toArray();
+      //  const count = await serviceCollection.estimatedDocumentCount();
+       res.send( {service});
+       
+    });
+        app.get('/services/:id', async (req, res) => {
+          const id = req.params.id;
+          console.log(id);
+          const query = {_id : ObjectId(id)};
+          const service = await serviceCollection.findOne(query);
+          res.send(service);
+        })
 
   
 } catch (error) {
@@ -49,7 +63,7 @@ async function dbConncet () {
 }
 
 }
-dbConncet();
+dbConncet().catch(err => console.log(err.name, err.message))
 
 
 
