@@ -29,30 +29,43 @@ async function dbConncet () {
   try {
   const serviceCollection = client.db("kajolCreative").collection("services");
 
-         app.get('/allservices', async (req, res) => {
-            const query = {}
-            const cursor = serviceCollection.find(query);
-            const result = await cursor.toArray();
-            res.send(result);
-            console.log(result);
+        //  app.get('/allservices', async (req, res) => {
+        //     const query = {}
+        //     const cursor = serviceCollection.find(query);
+        //     const result = await cursor.toArray();
+        //     res.send(result);
+        //     console.log(result);
              
-        });
+        // });
 
-      app.post("/allservices", (req, res) => {
+      app.post("/services", (req, res) => {
         const result = req.body;
         console.log(result);
       })
 
         app.get("/services", async(req, res) => {
-      const size = parseInt(req.query.size)
-      console.log(size);
-      
-      const query = {};
-       const cursor = serviceCollection.find(query);
-       
-       const service = await cursor.limit(size).toArray();
-      //  const count = await serviceCollection.estimatedDocumentCount();
-       res.send( {service});
+          
+          const query = {};
+          if(req.query.size) {
+             const size = parseInt(req.query.size)
+            console.log(size);
+            
+            const cursor = serviceCollection.find(query);
+            
+            const service = await cursor.limit(size).toArray();
+            //  const count = await serviceCollection.estimatedDocumentCount();
+            res.send( {service});
+
+          }
+          else {
+             const cursor = serviceCollection.find(query);
+            
+            const service = await cursor.toArray();
+            //  const count = await serviceCollection.estimatedDocumentCount();
+            res.send( {service});
+
+          }
+     
        
     });
         app.get('/services/:id', async (req, res) => {
