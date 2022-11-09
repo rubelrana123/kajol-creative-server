@@ -4,12 +4,13 @@
 
 const express = require('express')
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
-const app = express()
-const cors = require("cors");
+const jwt = require('jsonwebtoken');
+const app = express();
+const cors = require('cors');
+require('dotenv').config()
 const port = process.env.PORT || 5000;
 app.use(cors());
-app.use(express());
- 
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('Server is runnning')
@@ -36,6 +37,12 @@ async function dbConncet () {
             console.log(result);
              
         });
+
+      app.post("/allservices", (req, res) => {
+        const result = req.body;
+        console.log(result);
+      })
+
         app.get("/services", async(req, res) => {
       const size = parseInt(req.query.size)
       console.log(size);
@@ -55,6 +62,8 @@ async function dbConncet () {
           const service = await serviceCollection.findOne(query);
           res.send(service);
         })
+
+
 
   
 } catch (error) {
